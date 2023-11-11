@@ -2,8 +2,6 @@
   "dependencies": {
     "csv-parse": "^5.5.2",
     "csv-parser": "^3.0.0",
-    "git": "^0.1.5",
-    "npm-git-install": "^0.3.0"
   },
   "type": "module"
 }
