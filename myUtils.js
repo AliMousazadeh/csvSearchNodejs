@@ -2,7 +2,7 @@ import { createReadStream } from 'fs';
 import csv from 'csv-parser';
 
 
-export const readCSV = function (filePath) {
+const readCSV = (filePath) => {
   const csvFile = [];
 
   return new Promise((resolve, reject) => {
@@ -21,7 +21,7 @@ export const readCSV = function (filePath) {
 }
 
 
-export const findRows = function (csvFile, columnNumber, query) {
+const findRows = (csvFile, columnNumber, query) => {
   const selectedColumn = csvFile.map(row => row[columnNumber]);
 
   const indices = selectedColumn.reduce((accumulator, current, index) => {
@@ -30,3 +30,6 @@ export const findRows = function (csvFile, columnNumber, query) {
 
   return indices.map(indices => Object.values(csvFile[indices]));
 };
+
+
+export {readCSV, findRows};
