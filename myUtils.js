@@ -27,8 +27,13 @@ const readCSV = async (filePath) => {
 }
 
 
+const selectColumns = (array, columnNumber) => {
+  return array.map(row => row[columnNumber]);
+};
+
+
 const findRows = (csvFile, columnNumber, query) => {
-  const selectedColumn = csvFile.map(row => row[columnNumber]);
+  const selectedColumn = selectColumns(csvFile, columnNumber);
 
   const indices = selectedColumn.reduce((accumulator, current, index) => {
     return current === query ? accumulator.concat(index) : accumulator;
