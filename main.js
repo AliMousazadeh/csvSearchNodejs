@@ -6,6 +6,7 @@ const [filePath, columnNumber, query] = process.argv.slice(2);
 console.log(filePath, columnNumber, query);
 
 console.log('hello');
+console.log('hello again');
 
 
 function readCSV(filePath) {
