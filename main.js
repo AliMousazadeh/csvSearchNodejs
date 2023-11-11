@@ -2,11 +2,10 @@ import { readCSV, findRows } from './myUtils.js';
 
 const [filePath, columnNumber, query] = process.argv.slice(2);
 
-readCSV(filePath)
-  .then((csvFile) => findRows(csvFile, columnNumber, query))
-  .then((rows) => {
-    console.log(rows);
-  })
-  .catch((error) => {
-    console.error('Error:', error);
-  });
+try {
+  const csvFile = await readCSV(filePath);
+  const rows = findRows(csvFile, columnNumber, query);
+  console.log(rows);
+} catch (error) {
+  console.log(error.message);
+}
