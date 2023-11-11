@@ -5,6 +5,8 @@ import csv from 'csv-parser';
 const [filePath, columnNumber, query] = process.argv.slice(2);
 console.log(filePath, columnNumber, query);
 
+console.log('hello');
+
 
 function readCSV(filePath) {
   const results = [];
@@ -43,6 +45,8 @@ readCSV(filePath)
   .catch((error) => {
     console.error('Error reading CSV:', error);
   });
+
+
 
 
 
