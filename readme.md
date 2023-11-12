@@ -1,0 +1,1 @@
+Example: node main.js ./file.csv 1 Verdi
